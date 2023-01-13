@@ -49,6 +49,7 @@ class KDTree:
              self._root = self._insert(point, self._root, 0)
              self._n += 1
 
+            #Implement  insert() and range() 
     def _insert(self, point, node, depth):
         if node is None:
             return Node(point, None, None)
@@ -75,6 +76,7 @@ class KDTree:
         self._range(node.right, rectangle, results)
         
     
+            #implement the nearest neighbor query
     def nearest_neighbor(self, point: Point) -> Point:
         closest = None
         depth = 0
@@ -131,6 +133,7 @@ if __name__ == '__main__':
     range_test()
     performance_test()
     
+    #Visualize the time performance between k-d tree method and naive method
 import matplotlib.pyplot as plt
 
 points = [Point(x, y) for x in range(1000) for y in range(1000)]
